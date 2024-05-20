@@ -40,6 +40,6 @@ C:\Users\dti Digital\Documents\ABC_Fitness\TesteW12Github (2)\RepositorioGitHub.
 C:\Users\dti Digital\Documents\ABC_Fitness\TesteW12Github (2)\RepositorioGitHub.Dominio\bin\Debug\Newtonsoft.Json.xml
 C:\Users\dti Digital\Documents\ABC_Fitness\TesteW12Github (2)\RepositorioGitHub.Dominio\obj\Debug\RepositorioGitHub.Dominio.csproj.AssemblyReference.cache
 C:\Users\dti Digital\Documents\ABC_Fitness\TesteW12Github (2)\RepositorioGitHub.Dominio\obj\Debug\RepositorioGitHub.Dominio.csproj.CoreCompileInputs.cache
-C:\Users\dti Digital\Documents\ABC_Fitness\TesteW12Github (2)\RepositorioGitHub.Dominio\obj\Debug\RepositorioGitHub.Dominio.csproj.CopyComplete
 C:\Users\dti Digital\Documents\ABC_Fitness\TesteW12Github (2)\RepositorioGitHub.Dominio\obj\Debug\RepositorioGitHub.Dominio.dll
 C:\Users\dti Digital\Documents\ABC_Fitness\TesteW12Github (2)\RepositorioGitHub.Dominio\obj\Debug\RepositorioGitHub.Dominio.pdb
+C:\Users\dti Digital\Documents\ABC_Fitness\TesteW12Github (2)\RepositorioGitHub.Dominio\obj\Debug\Reposito.16E52594.Up2Date

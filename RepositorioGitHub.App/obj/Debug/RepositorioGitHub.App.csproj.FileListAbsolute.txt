@@ -599,6 +599,8 @@ C:\Users\dti Digital\Documents\ABC_Fitness\TesteW12Github (2)\RepositorioGitHub.
 C:\Users\dti Digital\Documents\ABC_Fitness\TesteW12Github (2)\RepositorioGitHub.App\bin\pt-br\System.Web.WebPages.Razor.resources.dll
 C:\Users\dti Digital\Documents\ABC_Fitness\TesteW12Github (2)\RepositorioGitHub.App\obj\Debug\RepositorioGitHub.App.csproj.AssemblyReference.cache
 C:\Users\dti Digital\Documents\ABC_Fitness\TesteW12Github (2)\RepositorioGitHub.App\obj\Debug\RepositorioGitHub.App.csproj.CoreCompileInputs.cache
-C:\Users\dti Digital\Documents\ABC_Fitness\TesteW12Github (2)\RepositorioGitHub.App\obj\Debug\RepositorioGitHub.App.csproj.CopyComplete
 C:\Users\dti Digital\Documents\ABC_Fitness\TesteW12Github (2)\RepositorioGitHub.App\obj\Debug\RepositorioGitHub.App.dll
 C:\Users\dti Digital\Documents\ABC_Fitness\TesteW12Github (2)\RepositorioGitHub.App\obj\Debug\RepositorioGitHub.App.pdb
+C:\Users\dti Digital\Documents\ABC_Fitness\TesteW12Github (2)\RepositorioGitHub.App\bin\RestSharp.dll
+C:\Users\dti Digital\Documents\ABC_Fitness\TesteW12Github (2)\RepositorioGitHub.App\bin\RestSharp.xml
+C:\Users\dti Digital\Documents\ABC_Fitness\TesteW12Github (2)\RepositorioGitHub.App\obj\Debug\Reposito.E705C5DD.Up2Date

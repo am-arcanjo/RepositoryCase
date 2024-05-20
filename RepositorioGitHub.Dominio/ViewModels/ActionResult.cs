@@ -16,7 +16,13 @@ namespace RepositorioGitHub.Dominio
         public bool IsValid { get; set; }
         public string Message { get; set; }
         public IList<TModel> Results { get; set; }
-
         public TModel Result { get; set; }
+
+        public ActionResult(TModel result, bool isValid)
+        {
+            Result = result;
+            IsValid = isValid;
+        }
+
     }
 }

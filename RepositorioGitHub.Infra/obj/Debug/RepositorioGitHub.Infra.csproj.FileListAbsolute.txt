@@ -202,6 +202,6 @@ C:\Users\dti Digital\Documents\ABC_Fitness\TesteW12Github (2)\RepositorioGitHub.
 C:\Users\dti Digital\Documents\ABC_Fitness\TesteW12Github (2)\RepositorioGitHub.Infra\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\dti Digital\Documents\ABC_Fitness\TesteW12Github (2)\RepositorioGitHub.Infra\obj\Debug\RepositorioGitHub.Infra.csproj.AssemblyReference.cache
 C:\Users\dti Digital\Documents\ABC_Fitness\TesteW12Github (2)\RepositorioGitHub.Infra\obj\Debug\RepositorioGitHub.Infra.csproj.CoreCompileInputs.cache
-C:\Users\dti Digital\Documents\ABC_Fitness\TesteW12Github (2)\RepositorioGitHub.Infra\obj\Debug\RepositorioGitHub.Infra.csproj.CopyComplete
 C:\Users\dti Digital\Documents\ABC_Fitness\TesteW12Github (2)\RepositorioGitHub.Infra\obj\Debug\RepositorioGitHub.Infra.dll
 C:\Users\dti Digital\Documents\ABC_Fitness\TesteW12Github (2)\RepositorioGitHub.Infra\obj\Debug\RepositorioGitHub.Infra.pdb
+C:\Users\dti Digital\Documents\ABC_Fitness\TesteW12Github (2)\RepositorioGitHub.Infra\obj\Debug\Reposito.389C29F6.Up2Date
