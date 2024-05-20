@@ -49,18 +49,18 @@ namespace RepositorioGitHub.App.Controllers
         }
 
         [HttpPost]
-        public ActionResult GetRepositorie(ActionResult<RepositoryViewModel> view)
+        public ActionResult GetRepositorie(string username)
         {
             ActionResult<RepositoryViewModel> model = new ActionResult<RepositoryViewModel>();
-            if (string.IsNullOrEmpty(view.Result?.Name))
+            if (string.IsNullOrEmpty(username))
             {
                 model.IsValid = false;
-                model.Message = "O Campo Nome Repositório tem que ser Presenchido";
+                model.Message = "O campo há de ser preenchido.";
                 TempData["warning"] = model.Message;
                 return View(model);
             }
 
-             model = _business.GetByName(view.Result.Name);
+             model = _business.GetByUsername();
 
             if (model.IsValid)
             {

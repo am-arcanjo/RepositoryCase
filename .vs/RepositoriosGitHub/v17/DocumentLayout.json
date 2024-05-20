@@ -3,6 +3,22 @@
   "WorkspaceRootPath": "C:\\Users\\dti Digital\\Documents\\ABC_Fitness\\TesteW12Github (2)\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{A7C07431-2301-4589-A381-D3130217C86C}|RepositorioGitHub.App\\RepositorioGitHub.App.csproj|c:\\users\\dti digital\\documents\\abc_fitness\\testew12github (2)\\repositoriogithub.app\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A7C07431-2301-4589-A381-D3130217C86C}|RepositorioGitHub.App\\RepositorioGitHub.App.csproj|solutionrelative:repositoriogithub.app\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A7C07431-2301-4589-A381-D3130217C86C}|RepositorioGitHub.App\\RepositorioGitHub.App.csproj|c:\\users\\dti digital\\documents\\abc_fitness\\testew12github (2)\\repositoriogithub.app\\views\\home\\getrepositorie.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A7C07431-2301-4589-A381-D3130217C86C}|RepositorioGitHub.App\\RepositorioGitHub.App.csproj|solutionrelative:repositoriogithub.app\\views\\home\\getrepositorie.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{31189E6A-8038-4029-973F-DFBDF9341B81}|RepositorioGitHub.Dominio\\RepositorioGitHub.Dominio.csproj|c:\\users\\dti digital\\documents\\abc_fitness\\testew12github (2)\\repositoriogithub.dominio\\viewmodels\\githubrepositoryviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{31189E6A-8038-4029-973F-DFBDF9341B81}|RepositorioGitHub.Dominio\\RepositorioGitHub.Dominio.csproj|solutionrelative:repositoriogithub.dominio\\viewmodels\\githubrepositoryviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A7C07431-2301-4589-A381-D3130217C86C}|RepositorioGitHub.App\\RepositorioGitHub.App.csproj|c:\\users\\dti digital\\documents\\abc_fitness\\testew12github (2)\\repositoriogithub.app\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A7C07431-2301-4589-A381-D3130217C86C}|RepositorioGitHub.App\\RepositorioGitHub.App.csproj|solutionrelative:repositoriogithub.app\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{9C0D5A5B-39E4-4EA3-8D2E-ED080D598AE6}|RepositorioGitHub.Infra\\RepositorioGitHub.Infra.csproj|c:\\users\\dti digital\\documents\\abc_fitness\\testew12github (2)\\repositoriogithub.infra\\apigithub\\githubapi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9C0D5A5B-39E4-4EA3-8D2E-ED080D598AE6}|RepositorioGitHub.Infra\\RepositorioGitHub.Infra.csproj|solutionrelative:repositoriogithub.infra\\apigithub\\githubapi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -13,14 +29,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{31189E6A-8038-4029-973F-DFBDF9341B81}|RepositorioGitHub.Dominio\\RepositorioGitHub.Dominio.csproj|c:\\users\\dti digital\\documents\\abc_fitness\\testew12github (2)\\repositoriogithub.dominio\\viewmodels\\actionresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{31189E6A-8038-4029-973F-DFBDF9341B81}|RepositorioGitHub.Dominio\\RepositorioGitHub.Dominio.csproj|solutionrelative:repositoriogithub.dominio\\viewmodels\\actionresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A7C07431-2301-4589-A381-D3130217C86C}|RepositorioGitHub.App\\RepositorioGitHub.App.csproj|c:\\users\\dti digital\\documents\\abc_fitness\\testew12github (2)\\repositoriogithub.app\\views\\home\\getrepositorie.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A7C07431-2301-4589-A381-D3130217C86C}|RepositorioGitHub.App\\RepositorioGitHub.App.csproj|solutionrelative:repositoriogithub.app\\views\\home\\getrepositorie.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A7C07431-2301-4589-A381-D3130217C86C}|RepositorioGitHub.App\\RepositorioGitHub.App.csproj|c:\\users\\dti digital\\documents\\abc_fitness\\testew12github (2)\\repositoriogithub.app\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A7C07431-2301-4589-A381-D3130217C86C}|RepositorioGitHub.App\\RepositorioGitHub.App.csproj|solutionrelative:repositoriogithub.app\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{CE4201E2-E80E-437F-A4C1-8303552238EC}|RepositorioGitHub.Business\\RepositorioGitHub.Business.csproj|c:\\users\\dti digital\\documents\\abc_fitness\\testew12github (2)\\repositoriogithub.business\\githubapibusiness.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -54,34 +62,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 20,
+          "SelectedChildIndex": 26,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ActionResult.cs",
-              "DocumentMoniker": "C:\\Users\\dti Digital\\Documents\\ABC_Fitness\\TesteW12Github (2)\\RepositorioGitHub.Dominio\\ViewModels\\ActionResult.cs",
-              "RelativeDocumentMoniker": "RepositorioGitHub.Dominio\\ViewModels\\ActionResult.cs",
-              "ToolTip": "C:\\Users\\dti Digital\\Documents\\ABC_Fitness\\TesteW12Github (2)\\RepositorioGitHub.Dominio\\ViewModels\\ActionResult.cs",
-              "RelativeToolTip": "RepositorioGitHub.Dominio\\ViewModels\\ActionResult.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAdAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-20T18:55:34.39Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "IGitHubApi.cs",
-              "DocumentMoniker": "C:\\Users\\dti Digital\\Documents\\ABC_Fitness\\TesteW12Github (2)\\RepositorioGitHub.Dominio\\Interfaces\\IGitHubApi.cs",
-              "RelativeDocumentMoniker": "RepositorioGitHub.Dominio\\Interfaces\\IGitHubApi.cs",
-              "ToolTip": "C:\\Users\\dti Digital\\Documents\\ABC_Fitness\\TesteW12Github (2)\\RepositorioGitHub.Dominio\\Interfaces\\IGitHubApi.cs",
-              "RelativeToolTip": "RepositorioGitHub.Dominio\\Interfaces\\IGitHubApi.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAsAAAA5AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-20T18:47:26.215Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:134:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
@@ -152,33 +134,85 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "GitHubRepositoryViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\dti Digital\\Documents\\ABC_Fitness\\TesteW12Github (2)\\RepositorioGitHub.Dominio\\ViewModels\\GitHubRepositoryViewModel.cs",
+              "RelativeDocumentMoniker": "RepositorioGitHub.Dominio\\ViewModels\\GitHubRepositoryViewModel.cs",
+              "ToolTip": "C:\\Users\\dti Digital\\Documents\\ABC_Fitness\\TesteW12Github (2)\\RepositorioGitHub.Dominio\\ViewModels\\GitHubRepositoryViewModel.cs*",
+              "RelativeToolTip": "RepositorioGitHub.Dominio\\ViewModels\\GitHubRepositoryViewModel.cs*",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAqAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-20T23:01:26.358Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 3,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\dti Digital\\Documents\\ABC_Fitness\\TesteW12Github (2)\\RepositorioGitHub.App\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "RepositorioGitHub.App\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\dti Digital\\Documents\\ABC_Fitness\\TesteW12Github (2)\\RepositorioGitHub.App\\Controllers\\HomeController.cs*",
+              "RelativeToolTip": "RepositorioGitHub.App\\Controllers\\HomeController.cs*",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAEkAAAAfAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-20T20:43:38.978Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ActionResult.cs",
+              "DocumentMoniker": "C:\\Users\\dti Digital\\Documents\\ABC_Fitness\\TesteW12Github (2)\\RepositorioGitHub.Dominio\\ViewModels\\ActionResult.cs",
+              "RelativeDocumentMoniker": "RepositorioGitHub.Dominio\\ViewModels\\ActionResult.cs",
+              "ToolTip": "C:\\Users\\dti Digital\\Documents\\ABC_Fitness\\TesteW12Github (2)\\RepositorioGitHub.Dominio\\ViewModels\\ActionResult.cs",
+              "RelativeToolTip": "RepositorioGitHub.Dominio\\ViewModels\\ActionResult.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAdAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-20T18:55:34.39Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "IGitHubApi.cs",
+              "DocumentMoniker": "C:\\Users\\dti Digital\\Documents\\ABC_Fitness\\TesteW12Github (2)\\RepositorioGitHub.Dominio\\Interfaces\\IGitHubApi.cs",
+              "RelativeDocumentMoniker": "RepositorioGitHub.Dominio\\Interfaces\\IGitHubApi.cs",
+              "ToolTip": "C:\\Users\\dti Digital\\Documents\\ABC_Fitness\\TesteW12Github (2)\\RepositorioGitHub.Dominio\\Interfaces\\IGitHubApi.cs",
+              "RelativeToolTip": "RepositorioGitHub.Dominio\\Interfaces\\IGitHubApi.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAsAAAA5AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-20T18:47:26.215Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "GetRepositorie.cshtml",
               "DocumentMoniker": "C:\\Users\\dti Digital\\Documents\\ABC_Fitness\\TesteW12Github (2)\\RepositorioGitHub.App\\Views\\Home\\GetRepositorie.cshtml",
               "RelativeDocumentMoniker": "RepositorioGitHub.App\\Views\\Home\\GetRepositorie.cshtml",
               "ToolTip": "C:\\Users\\dti Digital\\Documents\\ABC_Fitness\\TesteW12Github (2)\\RepositorioGitHub.App\\Views\\Home\\GetRepositorie.cshtml",
               "RelativeToolTip": "RepositorioGitHub.App\\Views\\Home\\GetRepositorie.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAASAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAABVAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-05-20T18:47:50.835Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
               "Title": "GitHubApi.cs",
               "DocumentMoniker": "C:\\Users\\dti Digital\\Documents\\ABC_Fitness\\TesteW12Github (2)\\RepositorioGitHub.Infra\\ApiGitHub\\GitHubApi.cs",
               "RelativeDocumentMoniker": "RepositorioGitHub.Infra\\ApiGitHub\\GitHubApi.cs",
               "ToolTip": "C:\\Users\\dti Digital\\Documents\\ABC_Fitness\\TesteW12Github (2)\\RepositorioGitHub.Infra\\ApiGitHub\\GitHubApi.cs",
               "RelativeToolTip": "RepositorioGitHub.Infra\\ApiGitHub\\GitHubApi.cs",
-              "ViewState": "AQIAACQAAAAAAAAAAAAowCgAAABNAAAA",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAAABkAAABQAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-20T18:34:50.66Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "Favorite.cs",
               "DocumentMoniker": "C:\\Users\\dti Digital\\Documents\\ABC_Fitness\\TesteW12Github (2)\\RepositorioGitHub.Dominio\\Entidades\\Favorite.cs",
               "RelativeDocumentMoniker": "RepositorioGitHub.Dominio\\Entidades\\Favorite.cs",
@@ -191,7 +225,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 9,
               "Title": "Owner.cs",
               "DocumentMoniker": "C:\\Users\\dti Digital\\Documents\\ABC_Fitness\\TesteW12Github (2)\\RepositorioGitHub.Dominio\\Entidades\\Owner.cs",
               "RelativeDocumentMoniker": "RepositorioGitHub.Dominio\\Entidades\\Owner.cs",
@@ -204,7 +238,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "GitHubApiBusiness.cs",
               "DocumentMoniker": "C:\\Users\\dti Digital\\Documents\\ABC_Fitness\\TesteW12Github (2)\\RepositorioGitHub.Business\\GitHubApiBusiness.cs",
               "RelativeDocumentMoniker": "RepositorioGitHub.Business\\GitHubApiBusiness.cs",
@@ -217,20 +251,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 0,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\dti Digital\\Documents\\ABC_Fitness\\TesteW12Github (2)\\RepositorioGitHub.App\\Views\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "RepositorioGitHub.App\\Views\\Home\\Index.cshtml",
               "ToolTip": "C:\\Users\\dti Digital\\Documents\\ABC_Fitness\\TesteW12Github (2)\\RepositorioGitHub.App\\Views\\Home\\Index.cshtml",
               "RelativeToolTip": "RepositorioGitHub.App\\Views\\Home\\Index.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABsAAAAWAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAABbAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-05-20T17:56:23.428Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 10,
               "Title": "RouteConfig.cs",
               "DocumentMoniker": "C:\\Users\\dti Digital\\Documents\\ABC_Fitness\\TesteW12Github (2)\\RepositorioGitHub.App\\App_Start\\RouteConfig.cs",
               "RelativeDocumentMoniker": "RepositorioGitHub.App\\App_Start\\RouteConfig.cs",
@@ -243,7 +277,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 11,
               "Title": "FilterConfig.cs",
               "DocumentMoniker": "C:\\Users\\dti Digital\\Documents\\ABC_Fitness\\TesteW12Github (2)\\RepositorioGitHub.App\\App_Start\\FilterConfig.cs",
               "RelativeDocumentMoniker": "RepositorioGitHub.App\\App_Start\\FilterConfig.cs",
@@ -255,7 +289,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 12,
               "Title": "BundleConfig.cs",
               "DocumentMoniker": "C:\\Users\\dti Digital\\Documents\\ABC_Fitness\\TesteW12Github (2)\\RepositorioGitHub.App\\App_Start\\BundleConfig.cs",
               "RelativeDocumentMoniker": "RepositorioGitHub.App\\App_Start\\BundleConfig.cs",

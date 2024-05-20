@@ -4,14 +4,16 @@
 }
 
 
-<h2>Teste Desenvolvedor W12</h2>
+<h2>Listagem de Repositórios por Usuário</h2>
 
-<div class="jumbotron">   
-    <p class="lead">Implemente a API do github no projeto seguindo a documentação abaixo:</p>    
-    <hr class="my-4">    
-    <p class="lead">
-        <a class="btn btn-primary btn-lg" target="_blank" href="https://docs.github.com/en" role="button">Visite a documentação</a>
-    </p>
+<div class="jumbotron">
+    <form id="searchForm" method="post">
+        <div class="form-group">
+            <label for="username">Nome do Usuário:</label>
+            <input type="text" class="form-control" id="username" name="username" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Buscar Repositórios</button>
+    </form>
 </div>
 
 <div class="row">
@@ -50,7 +52,46 @@
                     </tr>
                 }
             }
-        </table>      
+        </table>
     </div>
 </div>
+
+
+<script>
+document.getElementById('searchForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    var username = document.getElementById('username').value;
+
+    fetch('@Url.Action("GetByUsername")', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ username: username })
+    })
+   .then(response => response.json())
+   .then(data => {
+        updateTable(data);
+    })
+   .catch(error => console.error('Error:', error));
+});
+
+function updateTable(data) {
+    var tableBody = document.querySelector('.table tbody');
+    tableBody.innerHTML = '';
+    data.forEach(item => {
+        var row = document.createElement('tr');
+
+        row.innerHTML = `
+            <td>${item.Name}</td>
+            <td>${item.Owner.Login}</td>
+            <td>${item.FullName}</td>
+            <td><a href="${item.Url}">Detalhe</a></td>
+        `;
+
+        tableBody.appendChild(row);
+    });
+}
+</script>
 

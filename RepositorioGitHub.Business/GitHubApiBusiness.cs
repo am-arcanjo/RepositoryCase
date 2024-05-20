@@ -31,6 +31,11 @@ namespace RepositorioGitHub.Business
             return new ActionResult<RepositoryViewModel>();
         }
 
+        public ActionResult<RepositoryViewModel> GetByUsername(string username)
+        {
+            return new ActionResult<RepositoryViewModel>();
+        }
+
         public ActionResult<FavoriteViewModel> GetFavoriteRepository()
         {
             return new ActionResult<FavoriteViewModel>();
