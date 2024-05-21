@@ -39,25 +39,20 @@ namespace RepositorioGitHub.Infra.ApiGitHub
             }
         }
 
-        public ActionResult<RepositoryModel> GetRepositoryByName(string name)
+        public ActionResult<GitHubRepository> GetRepositoryByName(string username, string repoName)
         {
-            var request = new RestRequest($"search/repositories?q={name}");
+            var request = new RestRequest($"{username}/{repoName}");
             var response = _client.Execute(request);
 
             if (response.IsSuccessful)
             {
-                var model = JsonConvert.DeserializeObject<RepositoryModel>(response.Content);
-                if (!model.IncompleteResults && model.Repositories.Any())
-                {
-                    return new ActionResult<RepositoryModel>(model, response.StatusCode == HttpStatusCode.OK);
-                }
-                else if (!model.IncompleteResults)
-                {
-                    return new ActionResult<RepositoryModel>(null, false);
-                }
+                var repository = JsonConvert.DeserializeObject<GitHubRepository>(response.Content);
+                return new ActionResult<GitHubRepository>(repository, response.StatusCode == HttpStatusCode.OK);
             }
-
-            return new ActionResult<RepositoryModel>(null, false);
+            else
+            {
+                return new ActionResult<GitHubRepository>(null, false);
+            }
         }
     }
 }

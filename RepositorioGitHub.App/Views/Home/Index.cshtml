@@ -20,39 +20,33 @@
     <div class="col-md-12">
         <table class="table">
             <tr>
-                <th>Nome</th>
-                <th>Proprietario</th>
-                <th>Nome Completo</th>
-                <th>URL</th>
+                <th>Repositórios</th>
                 <th></th>
             </tr>
-
-            @if (Model != null && Model.Results != null)
-            {
-                foreach (var item in Model.Results)
-                {
-                    <tr>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Name)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Owner.Login)
-                        </td>
-
-                        <td>
-                            @Html.DisplayFor(modelItem => item.FullName)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Url)
-                        </td>
-
-                        <td>
-                            @Html.ActionLink("Detalhe", "Details", new { id = item.Id })
-                        </td>
-                    </tr>
-                }
-            }
         </table>
+    </div>
+</div>
+
+<div id="repoModal" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalRepoName"></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p><strong>Name:</strong> <span id="modalRepoName"></span></p>
+                <p><strong>Owner:</strong> <span id="modalRepoOwner"></span></p>
+                <p><strong>Description:</strong> <span id="modalRepoDescription"></span></p>
+                <p><strong>Last Updated At:</strong> <span id="modalRepoLastUpdate"></span></p>
+                <p><strong>Language:</strong> <span id="modalRepoLanguage"></span></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
     </div>
 </div>
 
@@ -84,15 +78,38 @@ function updateTable(data) {
             var row = document.createElement('tr');
 
             row.innerHTML = `
-                <td>${repo.Name}</td>
-                <td>${repo.Owner ? repo.Owner.Login : 'N/A'}</td>
-                <td>${repo.FullName}</td>
-                <td><a href="${repo.Url}">Detalhe</a></td>
+                <td><a href="#" class="repo-link" data-repo="${repo.Name}">${repo.Name}</a></td>
             `;
 
             tableBody.appendChild(row);
         });
+
+        document.querySelectorAll('.repo-link').forEach(link => {
+            link.addEventListener('click', function (e) {
+                e.preventDefault();
+                var repoName = this.getAttribute('data-repo');
+                fetchRepositoryDetails(username, repoName);
+            });
+        });
     }
+}
+
+function fetchRepositoryDetails(usrname, repoName) {
+    fetch('@Url.Action("GetRepositoryByName")?username=' + encodeURIComponent(username) + '&name=' + encodeURIComponent(repoName))
+        .then(response => response.json())
+        .then(data => {
+            showModal(data);
+        })
+        .catch(error => console.error('Error:', error));
+}
+
+function showModal(data) {
+    document.getElementById('modalRepoName').innerText = data.Name;
+    document.getElementById('modalRepoOwner').innerText = data.Owner;
+    document.getElementById('modalRepoDescription').innerText = data.Description;
+    document.getElementById('modalRepoLastUpdate').innerText = data.UpdatedAt;
+    document.getElementById('modalRepoLanguage').innerText = data.Language;
+    $('#repoModal').modal('show');
 }
 </script>
 

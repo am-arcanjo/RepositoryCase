@@ -9,6 +9,6 @@ namespace RepositorioGitHub.Dominio.Interfaces
     public interface IGitHubApi
     {
         ActionResult<List<GitHubRepository>> GetRepositoryByOwner(string owner);
-        ActionResult<RepositoryModel> GetRepositoryByName(string name);     
+        ActionResult<GitHubRepository> GetRepositoryByName(string username, string repoName);     
     }
 }

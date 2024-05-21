@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using Newtonsoft.Json;
+using RepositorioGitHub.Infra.ApiGitHub;
 
 namespace RepositorioGitHub.App.Controllers
 {
@@ -93,11 +94,10 @@ namespace RepositorioGitHub.App.Controllers
         }
 
         [HttpGet]
-        public ActionResult GetRepositorie()
+        public JsonResult GetRepositorieByName(string username, string repoName)
         {
-            ActionResult<RepositoryViewModel> model = new ActionResult<RepositoryViewModel>();
-
-            return View(model);
+            var result = _api.GetRepositoryByName(username, repoName);
+            return Json(result.Result);
         }
 
         public ActionResult DetailsRepository(long id, string login)
