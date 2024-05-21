@@ -63,7 +63,7 @@ document.getElementById('searchForm').addEventListener('submit', function(e) {
 
     var username = document.getElementById('username').value;
 
-    fetch('@Url.Action("GetByUsername")', {
+    fetch('@Url.Action("GetRepositorie")', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'

@@ -1,21 +1,27 @@
 ﻿using RepositorioGitHub.Business;
 using RepositorioGitHub.Business.Contract;
 using RepositorioGitHub.Dominio;
+using RepositorioGitHub.Dominio.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using Newtonsoft.Json;
 
 namespace RepositorioGitHub.App.Controllers
 {
     public class HomeController : Controller
     {
         private readonly IGitHubApiBusiness _business;
-        public HomeController(IGitHubApiBusiness business)
+        private readonly IGitHubApi _api;
+        public HomeController(IGitHubApiBusiness business, IGitHubApi api)
         {
             _business = business;
+            _api = api;
         }
+
         public ActionResult Index()
         {
             
@@ -51,27 +57,37 @@ namespace RepositorioGitHub.App.Controllers
         [HttpPost]
         public ActionResult GetRepositorie(string username)
         {
-            ActionResult<RepositoryViewModel> model = new ActionResult<RepositoryViewModel>();
+            RepositoryViewModel viewModel = new RepositoryViewModel();
+
             if (string.IsNullOrEmpty(username))
             {
-                model.IsValid = false;
-                model.Message = "O campo há de ser preenchido.";
-                TempData["warning"] = model.Message;
-                return View(model);
+                TempData["warning"] = "O campo há de ser preenchido.";
+                return View(viewModel);
             }
 
-             model = _business.GetByUsername();
-
-            if (model.IsValid)
+            try
             {
-                TempData["success"] = model.Message;
-            }
-            else
-            {
-                TempData["warning"] = model.Message;
-            }
+                var repositoriesResult = _api.GetRepositoryByOwner(username);
 
-            return View(model);
+                if (!repositoriesResult.IsValid || repositoriesResult.Result == null)
+                {
+                    TempData["warning"] = "Erro ao recuperar repositório.";
+                    return View(viewModel);
+                }
+
+                viewModel.Repositories = repositoriesResult.Result.ToArray();
+                viewModel.TotalCount = repositoriesResult.Result.Count;
+
+                TempData["success"] = "Repositório público recuperado com sucesso.";
+
+                return Json(viewModel, JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception ex)
+            {
+                ModelState.AddModelError("", "Erro ao recuperar repositório: " + ex.Message);
+                TempData["warning"] = "Erro ao recuperar repositório.";
+                return View(viewModel);
+            }
         }
 
         [HttpGet]

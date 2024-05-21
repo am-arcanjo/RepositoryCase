@@ -12,7 +12,6 @@ namespace RepositorioGitHub.Business.Contract
    {
         ActionResult<GitHubRepositoryViewModel> Get();
         ActionResult<RepositoryViewModel> GetByName(string name);
-        JsonResult<RepositoryViewModel> GetByUsername(string username);
         ActionResult<GitHubRepositoryViewModel> GetById(long id);
         ActionResult<GitHubRepositoryViewModel> GetRepository(string owner, long id);
         ActionResult<FavoriteViewModel> GetFavoriteRepository();

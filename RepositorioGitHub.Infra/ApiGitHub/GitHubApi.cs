@@ -23,7 +23,7 @@ namespace RepositorioGitHub.Infra.ApiGitHub
             _client.AddDefaultHeader("Accept", "application/vnd.github.v3+json");
         }
 
-        public ActionResult<GitHubRepository> GetRepositoryByOwner(string owner)
+        public ActionResult<List<GitHubRepository>> GetRepositoryByOwner(string owner)
         {
             var request = new RestRequest($"users/{owner}/repos");
             var response = _client.Execute(request);
@@ -31,11 +31,11 @@ namespace RepositorioGitHub.Infra.ApiGitHub
             if (response.IsSuccessful)
             {
                 var repositories = JsonConvert.DeserializeObject<List<GitHubRepository>>(response.Content);
-                return new ActionResult<GitHubRepository>(repositories.FirstOrDefault(), response.StatusCode == HttpStatusCode.OK);
+                return new ActionResult<List<GitHubRepository>>(repositories, response.StatusCode == HttpStatusCode.OK);
             }
             else
             {
-                return new ActionResult<GitHubRepository>(null, false);
+                return new ActionResult<List<GitHubRepository>>(null, false);
             }
         }
 
