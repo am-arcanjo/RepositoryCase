@@ -55,14 +55,14 @@ namespace RepositorioGitHub.App.Controllers
         }
 
         [HttpPost]
-        public ActionResult GetRepositorie(string username)
+        public JsonResult GetRepositorie(string username)
         {
             RepositoryViewModel viewModel = new RepositoryViewModel();
 
             if (string.IsNullOrEmpty(username))
             {
                 TempData["warning"] = "O campo há de ser preenchido.";
-                return View(viewModel);
+                return Json(viewModel, JsonRequestBehavior.AllowGet);
             }
 
             try
@@ -72,7 +72,7 @@ namespace RepositorioGitHub.App.Controllers
                 if (!repositoriesResult.IsValid || repositoriesResult.Result == null)
                 {
                     TempData["warning"] = "Erro ao recuperar repositório.";
-                    return View(viewModel);
+                    return Json(viewModel, JsonRequestBehavior.AllowGet);
                 }
 
                 viewModel.Repositories = repositoriesResult.Result.ToArray();
@@ -80,13 +80,15 @@ namespace RepositorioGitHub.App.Controllers
 
                 TempData["success"] = "Repositório público recuperado com sucesso.";
 
+                Console.WriteLine(JsonConvert.SerializeObject(viewModel));
+
                 return Json(viewModel, JsonRequestBehavior.AllowGet);
             }
             catch (Exception ex)
             {
                 ModelState.AddModelError("", "Erro ao recuperar repositório: " + ex.Message);
                 TempData["warning"] = "Erro ao recuperar repositório.";
-                return View(viewModel);
+                return Json(viewModel, JsonRequestBehavior.AllowGet);
             }
         }
 

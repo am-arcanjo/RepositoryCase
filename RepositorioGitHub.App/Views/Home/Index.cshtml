@@ -79,19 +79,20 @@ document.getElementById('searchForm').addEventListener('submit', function(e) {
 
 function updateTable(data) {
     var tableBody = document.querySelector('.table tbody');
-    tableBody.innerHTML = '';
-    data.forEach(item => {
-        var row = document.createElement('tr');
+    if (Array.isArray(data.Repositories)) {
+        data.Repositories.forEach(repo => {
+            var row = document.createElement('tr');
 
-        row.innerHTML = `
-            <td>${item.Name}</td>
-            <td>${item.Owner.Login}</td>
-            <td>${item.FullName}</td>
-            <td><a href="${item.Url}">Detalhe</a></td>
-        `;
+            row.innerHTML = `
+                <td>${repo.Name}</td>
+                <td>${repo.Owner ? repo.Owner.Login : 'N/A'}</td>
+                <td>${repo.FullName}</td>
+                <td><a href="${repo.Url}">Detalhe</a></td>
+            `;
 
-        tableBody.appendChild(row);
-    });
+            tableBody.appendChild(row);
+        });
+    }
 }
 </script>
 
