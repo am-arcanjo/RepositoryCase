@@ -1,0 +1,121 @@
+﻿@model RepositorioGitHub.Dominio.ActionResult<RepositorioGitHub.Dominio.GitHubRepositoryViewModel>
+@{
+    ViewBag.Title = "Home Page";
+}
+
+
+<h2>Listagem de Repositórios por Usuário</h2>
+
+<div class="jumbotron">
+    <form id="searchForm" method="post">
+        <div class="form-group">
+            <label for="username">Nome do Usuário:</label>
+            <input type="text" class="form-control" id="username" name="username" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Buscar Repositórios</button>
+    </form>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <table class="table">
+            <tr>
+                <th>Repositórios</th>
+                <th></th>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<div id="repoModal" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="modal">Dados do Repositório</h3>
+            </div>
+            <div class="modal-body">
+                <p><strong>Nome:</strong> <span id="modalRepoName"></span></p>
+                <p><strong>Proprietário:</strong> <span id="modalRepoOwner"></span></p>
+                <p><strong>Descrição:</strong> <span id="modalRepoDescription"></span></p>
+                <p><strong>Data da última atualização:</strong> <span id="modalRepoLastUpdate"></span></p>
+                <p><strong>Linguagem:</strong> <span id="modalRepoLanguage"></span></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script>
+document.getElementById('searchForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    var username = document.getElementById('username').value;
+
+    fetch('@Url.Action("GetRepositorie")', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ username: username })
+    })
+   .then(response => response.json())
+   .then(data => {
+        updateTable(data);
+    })
+   .catch(error => console.error('Error:', error));
+});
+
+function updateTable(data) {
+    var tableBody = document.querySelector('.table tbody');
+    if (Array.isArray(data.Repositories)) {
+        data.Repositories.forEach(repo => {
+            var row = document.createElement('tr');
+
+            row.innerHTML = `
+                <td><a href="#" class="repo-link" data-repo="${repo.Name}">${repo.Name}</a></td>
+            `;
+
+            tableBody.appendChild(row);
+        });
+
+        document.querySelectorAll('.repo-link').forEach(link => {
+            link.addEventListener('click', function (e) {
+                e.preventDefault();
+                var repoName = this.getAttribute('data-repo');
+                fetchRepositoryDetails(username, repoName);
+            });
+        });
+    }
+}
+
+function fetchRepositoryDetails(username, repoName) {
+    var url = '@Url.Action("GetRepositorieByName")' + '?username=' + encodeURIComponent(document.getElementById('username').value) + '&repoName=' + encodeURIComponent(repoName);
+    console.log('Fetching URL: ', url);
+    fetch(url)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            return response.json();
+        })
+        .then(data => {
+            showModal(data);
+        })
+        .catch(error => console.error('Error:', error));
+}
+
+    function showModal(data) {
+        console.log(data);
+    document.getElementById('modalRepoName').innerText = data.Name;
+    document.getElementById('modalRepoOwner').innerText = data.Owner.Login;
+    document.getElementById('modalRepoDescription').innerText = data.Description;
+    document.getElementById('modalRepoLastUpdate').innerText = (new Date(data.UpdatedAt).toLocaleDateString());
+    document.getElementById('modalRepoLanguage').innerText = data.Language;
+    $('#repoModal').modal('show');
+}
+</script>
+

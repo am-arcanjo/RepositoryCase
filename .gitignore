@@ -424,7 +424,11 @@ test-results/
 
 # Mac bundle stuff
 *.dmg
-*.app
+*/Content/*
+*/App_Start/*
+*/fonts/*
+*/Properties/*
+*/Scripts/*
 
 # content below from: https://github.com/github/gitignore/blob/master/Global/macOS.gitignore
 # General
@@ -482,3 +486,4 @@ $RECYCLE.BIN/
 
 # Vim temporary swap files
 *.swp
+
