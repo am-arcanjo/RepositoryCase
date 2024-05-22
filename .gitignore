@@ -425,10 +425,10 @@ test-results/
 # Mac bundle stuff
 *.dmg
 */Content/*
-*/App_Start/*
 */fonts/*
 */Properties/*
 */Scripts/*
+
 
 # content below from: https://github.com/github/gitignore/blob/master/Global/macOS.gitignore
 # General

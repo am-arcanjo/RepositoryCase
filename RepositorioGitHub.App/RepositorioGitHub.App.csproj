@@ -204,7 +204,7 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\Details.cshtml" />
-    <Content Include="Views\Home\GetRepositorie.cshtml" />
+    <Content Include="Views\Home\GetRepositorieSearch.cshtml" />
     <Content Include="Views\Home\DetailsRepository.cshtml" />
     <Content Include="Views\Home\Favorite.cshtml" />
   </ItemGroup>

@@ -116,7 +116,39 @@ namespace RepositorioGitHub.App.Controllers
             }
         }
 
-        asdadadadadasd
+        [HttpPost]
+        public ActionResult GetRepositorieSearch(ActionResult<RepositoryViewModel> view)
+        {
+            ActionResult<RepositoryViewModel> model = new ActionResult<RepositoryViewModel>();
+            if (string.IsNullOrEmpty(view.Result?.Name))
+            {
+                model.IsValid = false;
+                model.Message = "O Campo nome do repositório tem que ser preenchido";
+                TempData["warning"] = model.Message;
+                return View(model);
+            }
+
+            model = _business.GetByName(view.Result.Name);
+
+            if (model.IsValid)
+            {
+                TempData["success"] = model.Message;
+            }
+            else
+            {
+                TempData["warning"] = model.Message;
+            }
+
+            return View(model);
+        }
+
+        [HttpGet]
+        public ActionResult GetRepositorieSearch()
+        {
+            ActionResult<RepositoryViewModel> model = new ActionResult<RepositoryViewModel>();
+
+            return View(model);
+        }
 
         public ActionResult DetailsRepository(long id, string login)
         {
@@ -124,7 +156,7 @@ namespace RepositorioGitHub.App.Controllers
 
             if (string.IsNullOrEmpty(login) && id == 0)
             {
-                return RedirectToAction("GetRepositorie");
+                return RedirectToAction("GetRepositorieSearch");
             }
             else
             {
