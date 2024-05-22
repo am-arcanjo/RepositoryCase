@@ -151,7 +151,7 @@ namespace RepositorioGitHub.Dominio
         public DateTimeOffset CreatedAt { get; set; }
 
         [JsonProperty("updated_at")]
-        public DateTimeOffset UpdatedAt { get; set; }
+        public string UpdatedAt { get; set; }
 
         [JsonProperty("pushed_at")]
         public DateTimeOffset? PushedAt { get; set; }
