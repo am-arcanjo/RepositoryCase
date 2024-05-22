@@ -54,22 +54,5 @@ namespace RepositorioGitHub.Infra.ApiGitHub
                 return new ActionResult<GitHubRepository>(null, false);
             }
         }
-
-        public ActionResult<List<GitHubRepository>> GetRepositoryByRepoName(string repoSearch)
-        {
-            var request = new RestRequest($"/search/{repoSearch}");
-            var response = _client.Execute(request);
-
-            if (response.IsSuccessful)
-            {
-                var repositories = JsonConvert.DeserializeObject<List<GitHubRepository>>(response.Content);
-                return new ActionResult<List<GitHubRepository>>(repositories, response.StatusCode == HttpStatusCode.OK);
-            }
-            else
-            {
-                return new ActionResult<List<GitHubRepository>>(null, false);
-            }
-
-        }
     }
 }

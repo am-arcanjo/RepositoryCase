@@ -143,41 +143,11 @@ namespace RepositorioGitHub.App.Controllers
         }
 
         [HttpGet]
-        public JsonResult GetRepositorieSearch(string repoSearch)
+        public ActionResult GetRepositorieSearch()
         {
-            RepositoryViewModel viewModel = new RepositoryViewModel();
+            ActionResult<RepositoryViewModel> model = new ActionResult<RepositoryViewModel>();
 
-            if (string.IsNullOrEmpty(repoSearch))
-            {
-                TempData["warning"] = "O campo de repositório deve ser preenchido.";
-                return Json(viewModel, JsonRequestBehavior.AllowGet);
-            }
-
-            try
-            {
-                var repositoriesResult = _api.GetRepositoryByRepoName(repoSearch);
-
-                if (!repositoriesResult.IsValid || repositoriesResult.Result == null)
-                {
-                    TempData["warning"] = "Erro ao recuperar repositório.";
-                    return Json(viewModel, JsonRequestBehavior.AllowGet);
-                }
-
-                viewModel.Repositories = repositoriesResult.Result.ToArray();
-                viewModel.TotalCount = repositoriesResult.Result.Count;
-
-                TempData["success"] = "Repositórios públicos correspondentes recuperados com sucesso.";
-
-                Console.WriteLine(JsonConvert.SerializeObject(viewModel));
-
-                return Json(viewModel, JsonRequestBehavior.AllowGet);
-            }
-            catch (Exception ex)
-            {
-                ModelState.AddModelError("", "Erro ao recuperar repositórios: " + ex.Message);
-                TempData["warning"] = "Erro ao recuperar repositórios.";
-                return Json(viewModel, JsonRequestBehavior.AllowGet);
-            }
+            return View(model);
         }
 
         public ActionResult DetailsRepository(long id, string login)
