@@ -41,7 +41,7 @@ namespace RepositorioGitHub.Infra.ApiGitHub
 
         public ActionResult<GitHubRepository> GetRepositoryByName(string username, string repoName)
         {
-            var request = new RestRequest($"{username}/{repoName}");
+            var request = new RestRequest($"repos/{username}/{repoName}");
             var response = _client.Execute(request);
 
             if (response.IsSuccessful)
