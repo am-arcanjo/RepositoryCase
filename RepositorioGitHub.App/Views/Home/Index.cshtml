@@ -47,8 +47,6 @@
     </div>
 </div>
 
-
-
 <script>
 document.getElementById('searchForm').addEventListener('submit', function(e) {
     e.preventDefault();
@@ -94,7 +92,6 @@ function updateTable(data) {
 
 function fetchRepositoryDetails(username, repoName) {
     var url = '@Url.Action("GetRepositorieByName")' + '?username=' + encodeURIComponent(document.getElementById('username').value) + '&repoName=' + encodeURIComponent(repoName);
-    console.log('Fetching URL: ', url);
     fetch(url)
         .then(response => {
             if (!response.ok) {

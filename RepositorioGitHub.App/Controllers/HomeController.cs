@@ -171,6 +171,8 @@ namespace RepositorioGitHub.App.Controllers
                     return Json(viewModel, JsonRequestBehavior.AllowGet);
                 }
 
+                Console.WriteLine(viewModel);
+
                 TempData["success"] = "Repositórios públicos correspondentes recuperados com sucesso.";
 
                 Console.WriteLine(JsonConvert.SerializeObject(viewModel));
@@ -191,7 +193,7 @@ namespace RepositorioGitHub.App.Controllers
 
             if (string.IsNullOrEmpty(login) && id == 0)
             {
-                return RedirectToAction("GetRepositorieSearch");
+                return RedirectToAction("GetRepositorieSearchRepoName");
             }
             else
             {

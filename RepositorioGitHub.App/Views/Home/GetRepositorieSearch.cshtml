@@ -6,110 +6,77 @@
 <h2>Veja outros Repositórios</h2>
 <br />
 <br />
-@using (Html.BeginForm("GetRepositorieSearch", "Home", FormMethod.Post))
-{
-    <div class="row">
-        <div class="col-md-6">
-            <form class="form-inline pull-right ">
-                <div class="form-group">
-                    <label class="control-label">Nome do Repositório</label>
-                    @Html.TextBoxFor(s => s.Result.Name, new { @class = "form-control" })
-                </div>
 
-            </form>
-        </div>
-        <div class="col-md-3  " style="padding-top: 25px">
-
-            <button style="width:65%;float:left" type="submit" class="btn btn-primary  pull-left">Buscar <span class="glyphicon glyphicon-search"></span></button>
-
-        </div>
+    <div class="jumbotron">
+        <form id="search" method="post">
+            <div class="form-group">
+                <label>Nome do Repositório:</label>
+                <input type="text" class="form-control" id="repoSearch" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Buscar Repositórios</button>
+        </form>
     </div>
 
-
-}
-
 <br />
 <br />
-@if (Model.Result != null)
-{
-    <div class="row">
-        <div class="col-md-12">
-            <table class="table">
+
+<div class="row">
+    <div class="col-md-12">
+        <table class="table">
+            <thead>
                 <tr>
                     <th>Nome</th>
-                    <th>Proprietario</th>
-                    <th>Nome Completo</th>
-                    <th>URL</th>
-                    <th></th>
                 </tr>
-
-                @foreach (var item in Model.Result.Repositories)
-                {
-                    <tr>
-                        <td data-name="@item.Name">
-                            @Html.DisplayFor(modelItem => item.Name)
-                        </td>
-                        <td data-owner="@item.Owner.Login">
-                            @Html.DisplayFor(modelItem => item.Owner.Login)
-                        </td>
-
-                        <td>
-                            @Html.DisplayFor(modelItem => item.FullName)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Url)
-                        </td>
-
-                        <td>
-                            @Html.ActionLink("Detalhe", "DetailsRepository", new { id = item.Id, item.Owner.Login })
-                        </td>
-                    </tr>
-                }
-
-            </table>
-        </div>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
     </div>
-
-}
-
+</div>
 
 <script>
-document.getElementById('searchButton').addEventListener('submit', function(e) {
-    e.preventDefault();
+    document.getElementById('search').addEventListener('submit', function (e) {
+        e.preventDefault();
+        console.log("Form submitted");
+        var repoSearch = document.getElementById('repoSearch').value;
 
-    var url = '@Url.Action("GetRepositorieSearchRepoName")' + '?repoSearch=' + encodeURIComponent(document.getElementById('repoSearch').value));
-    fetch(url)
-        .then(response => {
-            if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
-            }
-            return response.json();
-        })
-        .then(data => {
-            updateTable(data);
-        })
-        .catch(error => console.error('Error:', error));
+        var url = '@Url.Action("GetRepositorieSearchRepoName", "Home")' + '?repoSearch=' + encodeURIComponent(repoSearch);
+        console.log(url);
 
-function updateTable(data) {
-    var tableBody = document.querySelector('.table tbody');
-    if (Array.isArray(data.Repositories)) {
-        data.Repositories.forEach(repo => {
-            var row = document.createElement('tr');
+        fetch(url)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                return response.json();
+            })
+            .then(data => {
+                updateTable(data);
+            })
+            .catch(error => console.error('Error:', error));
+    });
 
-            row.innerHTML = `
-                <td><a href="#" class="repo-link" data-repo="${repo.Name}">${repo.Name}</a></td>
-            `;
+    function updateTable(data) {
+        var tableBody = document.querySelector('.table tbody');
+        if (Array.isArray(data.Repositories)) {
+            data.Repositories.forEach(repo => {
+                var row = document.createElement('tr');
 
-            tableBody.appendChild(row);
-        });
+                row.innerHTML = `
+                    <td><a href="#" class="repo-link" data-repo="${repo.Name}">${repo.Name}</a></td>
+                `;
 
-        document.querySelectorAll('.repo-link').forEach(link => {
-            link.addEventListener('click', function (e) {
-                e.preventDefault();
-                var repoName = this.getAttribute('data-repo');
-                fetchRepositoryDetails(username, repoName);
+                tableBody.appendChild(row);
             });
-        });
+
+            document.querySelectorAll('.repo-link').forEach(link => {
+                link.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    var repoName = this.getAttribute('data-repo');
+                    fetchRepositoryDetails(username, repoName);
+                });
+            });
+        }
     }
-}
+
 </script>
