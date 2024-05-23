@@ -8,22 +8,22 @@
 <br />
 @using (Html.BeginForm("GetRepositorieSearch", "Home", FormMethod.Post))
 {
-<div class="row">
-    <div class="col-md-6">
-        <form class="form-inline pull-right ">
-            <div class="form-group">
-                <label class="control-label">Nome do Repositório</label>
-                @Html.TextBoxFor(s => s.Result.Name, new { @class = "form-control" })
-            </div>
+    <div class="row">
+        <div class="col-md-6">
+            <form class="form-inline pull-right ">
+                <div class="form-group">
+                    <label class="control-label">Nome do Repositório</label>
+                    @Html.TextBoxFor(s => s.Result.Name, new { @class = "form-control" })
+                </div>
 
-        </form>
-    </div>
-    <div class="col-md-3  " style="padding-top: 25px">
-      
-        <button style="width:65%;float:left" type="submit" class="btn btn-primary  pull-left">Buscar <span class="glyphicon glyphicon-search"></span></button>
+            </form>
+        </div>
+        <div class="col-md-3  " style="padding-top: 25px">
 
+            <button style="width:65%;float:left" type="submit" class="btn btn-primary  pull-left">Buscar <span class="glyphicon glyphicon-search"></span></button>
+
+        </div>
     </div>
-</div>
 
 
 }
@@ -71,3 +71,45 @@
     </div>
 
 }
+
+
+<script>
+document.getElementById('searchButton').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    var url = '@Url.Action("GetRepositorieSearchRepoName")' + '?repoSearch=' + encodeURIComponent(document.getElementById('repoSearch').value));
+    fetch(url)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            return response.json();
+        })
+        .then(data => {
+            updateTable(data);
+        })
+        .catch(error => console.error('Error:', error));
+
+function updateTable(data) {
+    var tableBody = document.querySelector('.table tbody');
+    if (Array.isArray(data.Repositories)) {
+        data.Repositories.forEach(repo => {
+            var row = document.createElement('tr');
+
+            row.innerHTML = `
+                <td><a href="#" class="repo-link" data-repo="${repo.Name}">${repo.Name}</a></td>
+            `;
+
+            tableBody.appendChild(row);
+        });
+
+        document.querySelectorAll('.repo-link').forEach(link => {
+            link.addEventListener('click', function (e) {
+                e.preventDefault();
+                var repoName = this.getAttribute('data-repo');
+                fetchRepositoryDetails(username, repoName);
+            });
+        });
+    }
+}
+</script>
