@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using RepositorioGitHub.Dominio;
 using RepositorioGitHub.Dominio.Interfaces;
 using RestSharp;
@@ -57,12 +58,18 @@ namespace RepositorioGitHub.Infra.ApiGitHub
 
         public ActionResult<List<GitHubRepository>> GetRepositoryByRepoName(string repoSearch)
         {
-            var request = new RestRequest($"/search/{repoSearch}");
+            var request = new RestRequest($"/search/repositories", Method.GET);
+            request.AddParameter("q", repoSearch);
             var response = _client.Execute(request);
 
             if (response.IsSuccessful)
             {
-                var repositories = JsonConvert.DeserializeObject<List<GitHubRepository>>(response.Content);
+                var jsonResponse = JsonConvert.DeserializeObject<JObject>(response.Content);
+                var repositories = jsonResponse["items"].ToObject<List<GitHubRepository>>();
+
+                Console.WriteLine(jsonResponse);
+                Console.WriteLine(repositories);
+
                 return new ActionResult<List<GitHubRepository>>(repositories, response.StatusCode == HttpStatusCode.OK);
             }
             else

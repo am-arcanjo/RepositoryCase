@@ -37,11 +37,9 @@
 <script>
     document.getElementById('search').addEventListener('submit', function (e) {
         e.preventDefault();
-        console.log("Form submitted");
         var repoSearch = document.getElementById('repoSearch').value;
 
         var url = '@Url.Action("GetRepositorieSearchRepoName", "Home")' + '?repoSearch=' + encodeURIComponent(repoSearch);
-        console.log(url);
 
         fetch(url)
             .then(response => {
@@ -58,25 +56,14 @@
 
     function updateTable(data) {
         var tableBody = document.querySelector('.table tbody');
-        if (Array.isArray(data.Repositories)) {
-            data.Repositories.forEach(repo => {
+        data.forEach(repo => {
                 var row = document.createElement('tr');
 
                 row.innerHTML = `
                     <td><a href="#" class="repo-link" data-repo="${repo.Name}">${repo.Name}</a></td>
                 `;
-
                 tableBody.appendChild(row);
-            });
-
-            document.querySelectorAll('.repo-link').forEach(link => {
-                link.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    var repoName = this.getAttribute('data-repo');
-                    fetchRepositoryDetails(username, repoName);
-                });
-            });
-        }
+         });
     }
 
 </script>
